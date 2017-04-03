@@ -1,0 +1,16 @@
+{
+  "name": "nfe-xml",
+  "version": "1.0.0",
+  "description": "Módulo para manipular XML de NFe, baseado em regex. Indicado para grandes processamentos em massa pela sua velocidade de processamento.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nfe",
+    "xml",
+    "brasil"
+  ],
+  "author": "Vinícius Simões <vinicius.simoes95@gmail.com>",
+  "license": "GNU3"
+}
