@@ -45,7 +45,42 @@ class NFe {
 
     produtos() {
         this.temp = this._extractGlobal(/<det.+?>(.+?)<\/det>/gi)
-            // || this._extract(/<vprod>(.+?)<\/vprod>/i);
+        // || this._extract(/<vprod>(.+?)<\/vprod>/i);
+        return this;
+    }
+
+    cobranca() {
+        this.temp = this._extract(/<cobr>(.+?)<\/cobr>/i);
+        return this;
+    }
+
+    fatura() {
+        this.temp = this._extract(/<fat>(.+?)<\/fat>/i);
+        return this;
+    }
+
+    numFatura() {
+        this.temp = this._extract(/<nfat>(.+?)<\/nfat>/i);
+        return this;
+    }
+
+    valorLiquido() {
+        this.temp = this._extract(/<vliq>(.+?)<\/vliq>/i);
+        return this;
+    }
+
+    duplicatas() {
+        this.temp = this._extractGlobal(/<dup>(.+?)<\/dup>/gi);
+        return this;
+    }
+
+    dataVencimento() {
+        this.temp = this._extract(/<dvenc>(.+?)<\/dvenc>/i);
+        return this;
+    }
+
+    numDuplicata() {
+        this.temp = this._extract(/<ndup>(.+?)<\/ndup>/i);
         return this;
     }
 
@@ -153,7 +188,9 @@ class NFe {
             || this._extract(/<vicms>(.+?)<\/vicms>/i)
             || this._extract(/<vipi>(.+?)<\/vipi>/i)
             || this._extract(/<vcofins>(.+?)<\/vcofins>/i)
-            || this._extract(/<vpis>(.+?)<\/vpis>/i);
+            || this._extract(/<vpis>(.+?)<\/vpis>/i)
+            || this._extract(/<vdup>(.+?)<\/vdup>/i)
+            || this._extract(/<vorig>(.+?)<\/vorig>/i);
         return this;
     }
 
@@ -189,6 +226,11 @@ class NFe {
 
     toNumber() {
         this.temp = Number(this.temp);
+        return this;
+    }
+
+    toDate() {
+        this.temp = new Date(this.temp);
         return this;
     }
 
