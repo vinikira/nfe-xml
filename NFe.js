@@ -123,6 +123,11 @@ class NFe {
         return this;
     }
 
+    dataEmissao()
+        this.temp = this._extract(/<d.+?emi>(.+?)<\/d.+?emi>/i);
+        return this;
+    }
+
     nfNum() {
         this.temp = this._extract(/<nnf>(.+?)<\/nnf>/i);
         return this;
