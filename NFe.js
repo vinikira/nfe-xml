@@ -5,7 +5,7 @@
 class NFe {
     constructor(xml) {
         this.xml = xml.replace(/\n/gi, '');
-        this.temp = xml;
+        this.temp = xml.replace(/\n/gi, '');
     }
 
     _extract(regex) {
