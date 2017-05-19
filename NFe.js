@@ -43,6 +43,17 @@ class NFe {
         return this;
     }
 
+    endereco() {
+        this.temp = this._extract(/<enderemit>(.+?)<\/enderemit>/i)
+            || this._extract(/<enderdest>(.+?)<\/enderdest>/i);
+        return this;
+    }
+
+    inscricaoEstadualST() {
+        this.temp = this._extract(/<iest>(.+?)<\/iest>/i);
+        return this;
+    }
+
     produtos() {
         this.temp = this._extractGlobal(/<det.+?>(.+?)<\/det>/gi)
         // || this._extract(/<vprod>(.+?)<\/vprod>/i);
@@ -91,12 +102,14 @@ class NFe {
 
     icms() {
         this.temp = this._extract(/<icms>(.+?)<\/icms>/i)
+            || this._extract(/<icmstot>(.+?)<\/icmstot>/i)
             || this._extract(/<vicms>(.+?)<\/vicms>/i);
         return this;
     }
 
     icmsst() {
-        this.temp = this._extract(/<vicmsst>(.+?)<\/vicmsst>/i);
+        this.temp = this._extract(/<vicmsst>(.+?)<\/vicmsst>/i)
+            || this._extract(/<vst>(.+?)<\/vst>/i);
         return this;
     }
 
@@ -244,6 +257,18 @@ class NFe {
             cb(new NFe(el), i);
         });
         this.temp = this.xml;
+    }
+
+    toArray() {
+        if (this.temp instanceof Array) {
+            this.temp = this.temp.map(el => {
+                return new NFe(el);
+            });
+        } else {
+            this.temp = new Array(new NFe(this.temp));
+        }
+
+        return this;
     }
 }
 
