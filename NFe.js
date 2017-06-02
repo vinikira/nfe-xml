@@ -49,6 +49,11 @@ class NFe {
         return this;
     }
 
+    uf() {
+        this.temp = this._extract(/<uf>(.+?)<\/uf>/i);
+        return this;
+    }
+
     inscricaoEstadualST() {
         this.temp = this._extract(/<iest>(.+?)<\/iest>/i);
         return this;
