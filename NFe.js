@@ -60,7 +60,7 @@ class NFe {
     }
 
     produtos() {
-        this.temp = this._extractGlobal(/<det.+?>(.+?)<\/det>/gi)
+        this.temp = this._extractGlobal(/<det.+?>(.+?)<\/det>/gi);
         // || this._extract(/<vprod>(.+?)<\/vprod>/i);
         return this;
     }
@@ -239,6 +239,16 @@ class NFe {
 
     frete() {
         this.temp = this._extract(/<vfrete>(.+?)<\/vfrete>/i);
+        return this;
+    }
+
+    informacoesProt(){
+	this.temp = this._extract(/<infprot>(.+?)<\/infprot>/i);
+        return this;
+    }
+
+    chaveNFe() {
+	this.temp = this._extract(/<chnfe>(.+?)<\/chnfe>/i);
         return this;
     }
 
