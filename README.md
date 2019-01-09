@@ -1,4 +1,6 @@
 # nfe-xml
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 Módulo para manipular XML de NFe, baseado em regex. Indicado para grandes processamentos em massa pela sua velocidade de processamento.
 
 ## Instalação
@@ -36,4 +38,3 @@ xml.emitente().nome().done(); //ex. Foo ltda
 xml.destinatario().nome().done(); //ex. Bar ltda
 //...
 ```
-Em breve será adicionado uma documentação em JSDoc.

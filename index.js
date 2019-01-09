@@ -1,3 +1,3 @@
-const NFe = require('./NFe.js');
+const NFe = require('./NFe.js')
 
-module.exports = NFe;
+module.exports = NFe

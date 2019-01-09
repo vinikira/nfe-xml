@@ -1,6 +1,6 @@
 {
   "name": "nfe-xml",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Módulo para manipular XML de NFe, baseado em regex. Indicado para grandes processamentos em massa pela sua velocidade de processamento.",
   "main": "index.js",
   "scripts": {
