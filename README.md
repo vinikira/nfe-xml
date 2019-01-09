@@ -22,6 +22,7 @@ const xml = new NFe(file);
 
 xml.produtos().select(0).valor().done(); //ex. 250.65
 ```
+
 #### Iterar sobre produtos do xml
 
 ```javascript
@@ -29,6 +30,31 @@ xml.produtos().select(0).valor().done(); //ex. 250.65
 xml.produtos().each(produto => console.log(`${produto.icms().done()} - `)); //ex. 254.55 - 658.54 - 856.65
 //...
 ```
+
+### Mapear produtos
+
+```javascript
+//...
+xml.produtos().map(produto => ({ valor: produto.valor().toNumber().done() })); // [{ valor: 255.50 }, { valor: 265.78 }]
+//...
+```
+
+### Filtrar produtos
+
+```javascript
+//...
+xml.produtos().filter(produto => produto.valor().toNumber().done() > 400); // [ NFe {}, NFe {} ]
+//...
+```
+
+### Reduzir produtos para um valor
+
+```javascript
+//...
+xml.produtos().reduce(produto => produto.valor().toNumber().done() + acc, 0); // 500.56
+//...
+```
+
 #### Pegar o nome do emitente e destinatário
 
 ```javascript
